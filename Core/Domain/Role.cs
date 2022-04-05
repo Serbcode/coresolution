@@ -5,6 +5,7 @@ namespace CoreSolution.Core.Domain
     {
         public int RoleId { get; set; }
         public string RoleName { get; set; }
+        public virtual ICollection<Employee> Employees {get; set;}
     }
     #pragma warning restore
 }
