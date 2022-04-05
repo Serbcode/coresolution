@@ -24,6 +24,9 @@ namespace CoreSolution.DataAccess
             modelBuilder.Entity<Role>()
                 .HasMany(e => e.Employees)
                 .WithMany(r => r.Roles);
+
+            modelBuilder.Entity<Role>().HasData(FakeData.Roles);
+            modelBuilder.Entity<Employee>().HasData(FakeData.Employees);
         }
 
     }
