@@ -1,8 +1,11 @@
+using CoreSolution.DataAccess;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<DataContext>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -12,15 +15,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger(c => {
-        //c.RouteTemplate = "docs/swagger/v1/swagger.json";
-    });
-
-    app.UseSwaggerUI(c =>
-    {
-        //c.SwaggerEndpoint("docs/swagger/v1/swagger.json", "PromoCodeFactory API");
-        //c.RoutePrefix = string.Empty;
-    });
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

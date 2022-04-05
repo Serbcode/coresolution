@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using CoreSolution.Core.Domain;
 
-namespace CoreSolution.DataContext
+namespace CoreSolution.DataAccess
 {
     public class DataContext : DbContext
     {
